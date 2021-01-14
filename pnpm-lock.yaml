@@ -1,0 +1,42 @@
+devDependencies:
+  bs-platform: 8.4.2
+  bs-webapi: 0.19.1
+  fastpack: 0.9.1
+lockfileVersion: 5.2
+packages:
+  /bs-fetch/0.6.2:
+    dev: true
+    resolution:
+      integrity: sha512-VXEjp8kY3vHPckaoy3d96Bx0KYjJAPLNISBwfpwMN26K6DtuZYwI2HKhx7zeHBajz1bRArfx7O8OOLcdtujMvg==
+  /bs-platform/8.4.2:
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-9q7S4/LLV/a68CweN382NJdCCr/lOSsJR3oQYnmPK98ChfO/AdiA3lYQkQTp6T+U0I5Z5RypUAUprNstwDtMDQ==
+  /bs-webapi/0.19.1:
+    dependencies:
+      bs-fetch: 0.6.2
+    dev: true
+    peerDependencies:
+      bsdoc: ^6.0.4-alpha
+    resolution:
+      integrity: sha512-sRhkNdHFBxzoiLH+r8rhlW9XSafBbbGCkvsxtTJ1QMABEaHKj8TejwA7TuBZH2ZYL2ur3sk291ukkge5qFm3Uw==
+  /fastpack/0.9.1:
+    dependencies:
+      loader-runner: 3.1.0
+    dev: true
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha512-Pons5DJAfBCMkaFQ2Sx08PapmrTYmbgA+cMq5efjsJiOHQLwmRbiFN3oUcIH3lfDFfiHOhtKlrfl1C8+wjApHQ==
+  /loader-runner/3.1.0:
+    dev: true
+    engines:
+      node: '>=6.11.5'
+    resolution:
+      integrity: sha512-wE/bOCdTKMR2rm7Xxh+eirDOmN7Vx7hntWgiTayuFPtF8MgsFDo49SP8kkYz8IVlEBTOtR7P+XI7bE1xjo/IkA==
+specifiers:
+  bs-platform: ^8.4.2
+  bs-webapi: ^0.19.1
+  fastpack: ^0.9.1
