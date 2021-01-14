@@ -5,13 +5,10 @@
     "build": "bsb -make-world && fpack --development",
     "clean": "bsb -clean-world",
     "watch": "bsb -w",
-    "watchexec": "watchexec -w src -i lib -e re,rei yarn bsb -w",
     "test": "node src/FunctorsSimple.js"
   },
   "devDependencies": {
-    "bs-platform": "^8.4.2",
-    "bs-webapi": "^0.19.1",
-    "fastpack": "^0.9.1"
+    "bs-platform": "^8.4.2"
   },
   "keywords": [
     "BuckleScript"
