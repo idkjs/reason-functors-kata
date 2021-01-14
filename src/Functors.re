@@ -140,7 +140,15 @@ let wulfgar = Human.make("Wulfgar");
 
 let drizzt = Elf.make("Drizzt Do'Urden");
 
-// let companions = [catti, regis, bruenor, wulfgar, drizzt];
+type buddy =
+  | Dwarf(Dwarf.t)
+  | Elf(Elf.t)
+  | Halfing(Halfling.t)
+  | Tiefling(Tiefling.t)
+  | HalfOrc(HalfOrc.t)
+  | Human(Human.t);
+
+let companions = [Human(catti), Halfing(regis), Dwarf(bruenor), Human(wulfgar), Elf(drizzt)];
 let companions_final = [
   `Human(catti),
   `Halfing(regis),

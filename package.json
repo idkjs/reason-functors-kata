@@ -1,12 +1,12 @@
 {
-  "name": "dragons",
+  "name": "reason-functors-kata",
   "version": "0.1.0",
  "scripts": {
     "build": "bsb -make-world && fpack --development",
     "clean": "bsb -clean-world",
     "watch": "bsb -w",
     "watchexec": "watchexec -w src -i lib -e re,rei yarn bsb -w",
-    "test": "node src/reason_functors.js"
+    "test": "node src/FunctorsSimple.js"
   },
   "devDependencies": {
     "bs-platform": "^8.4.2",

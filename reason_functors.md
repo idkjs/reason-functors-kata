@@ -410,117 +410,6 @@ module HalfOrc = Race((val bonus(Abilities.{...no_bonus, strength: 2})));
 By the end of this section, you should have:
 
 ```reason
-
-Abilities module = struct
-  type t = {
-    strength: int
-  ; dexterity: int
-  ; constitution: int
-  ; intelligence: int
-  ; wisdom: int
-  ; charisma: int
-  }
-
-  let init () = {
-    strength = 10
-  ; dexterity = 10
-  ; constitution = 10
-  ; intelligence = 10
-  ; wisdom = 10
-  ; charisma = 10
-  }
-end
-
-BONUS type module = sig
-  type t
-  val value: t
-end
-
-let bonus (x: Abilities.t): (module BONUS with type t = Abilities.t) =
-  (struct module
-    type t = Abilities.t
-    let value = x
-  end)
-
-let no_bonus = Abilities. {
-    strength = 0
-  ; dexterity = 0
-  ; constitution = 0
-  ; intelligence = 0
-  ; wisdom = 0
-  ; charisma = 0
-  }
-
-module type PLAYABLE = sig
-  type t
-  val make: string -> t
-  val name: t -> string
-  val abilities: t -> Abilities.t
-end
-
-
-Race module
-    (B: BONUS with type t = Abilities.t): PLAYABLE = struct
-  type t = {name: string; abilities: Abilities.t}
-  let name character = character.name
-  let make name = {name; abilities = Abilities.init ()}
-  let bonus = Abilities. {
-      strength = B.value.strength
-    ; dexterity = B.value.dexterity
-    ; constitution = B.value.constitution
-    ; intelligence = B.value.intelligence
-    ; wisdom = B.value.wisdom
-    ; charisma = B.value.charisma
-    }
-  let abilities character = Abilities. {
-      strength = character.abilities.strength + bonus.strength
-    ; dexterity = character.abilities.dexterity + bonus.dexterity
-    ; constitution = character.abilities.constitution + bonus.constitution
-    ; intelligence = character.abilities.intelligence + bonus.intelligence
-    ; wisdom = character.abilities.wisdom + bonus.wisdom
-    ; charisma = character.abilities.charisma + bonus.charisma
-    }
-end
-
-Dwarf module = Race (val bonus Abilities. {
-    no_bonus with constitution = 2
-  })
-Elf module = Race (val bonus Abilities. {
-    no_bonus with dexterity = 2
-  })
-Halfling module = Race (val bonus Abilities. {
-    no_bonus with dexterity = 2
-  })
-Tiefling module = Race (val bonus Abilities. {
-    no_bonus with charisma = 2; intelligence = 1
-  })
-HalfOrc = Race module (val bonus Abilities. {
-    no_bonus with strength = 2
-  })
-```
-
-You can easily add any race, for example humans have +1 to all characteristics:
-
-```reason
-module Human =
-  Race(
-    (
-      val bonus(
-            Abilities.{
-              strength: 1,
-              dexterity: 1,
-              constitution: 1,
-              intelligence: 1,
-              wisdom: 1,
-              charisma: 1,
-            },
-          )
-    ),
-  );
-```
-## End Result Is
-
-```reason
 module type PLAYABLE = {
   type t;
   let name: t => string;
@@ -630,8 +519,10 @@ module Halfling = Race((val bonus(Abilities.{...no_bonus, dexterity: 2})));
 module Tiefling =
   Race((val bonus(Abilities.{...no_bonus, charisma: 2, intelligence: 1})));
 module HalfOrc = Race((val bonus(Abilities.{...no_bonus, strength: 2})));
+```
+You can easily add any race, for example humans have +1 to all characteristics:
 
-/* We can add new race with ease. Humans have +1 for all abilities */
+```reason
 module Human =
   Race(
     (

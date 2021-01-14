@@ -304,6 +304,42 @@ var drizzt = {
   abilities: drizzt_abilities
 };
 
+var companions_0 = {
+  TAG: /* Human */5,
+  _0: catti
+};
+
+var companions_1 = {
+  hd: {
+    TAG: /* Halfing */2,
+    _0: regis
+  },
+  tl: {
+    hd: {
+      TAG: /* Dwarf */0,
+      _0: bruenor
+    },
+    tl: {
+      hd: {
+        TAG: /* Human */5,
+        _0: wulfgar
+      },
+      tl: {
+        hd: {
+          TAG: /* Elf */1,
+          _0: drizzt
+        },
+        tl: /* [] */0
+      }
+    }
+  }
+};
+
+var companions = {
+  hd: companions_0,
+  tl: companions_1
+};
+
 var companions_final_0 = {
   NAME: "Human",
   VAL: catti
@@ -367,5 +403,6 @@ exports.regis = regis;
 exports.bruenor = bruenor;
 exports.wulfgar = wulfgar;
 exports.drizzt = drizzt;
+exports.companions = companions;
 exports.companions_final = companions_final;
 /* No side effect */
