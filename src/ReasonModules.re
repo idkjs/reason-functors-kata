@@ -308,7 +308,7 @@ Souvenez-vous, nous nous étions posé des questions sur la manière de concevoi
 
     let printScore: ScoreInt.t => string = aScore => ScoreInt.(print(aScore));
 
-    // printScore(4); /* ne compile pas */
+/*     printScore(4); ne compile pas */
 
 /* qui produira une erreur de compilation */
 
@@ -322,6 +322,9 @@ Souvenez-vous, nous nous étions posé des questions sur la manière de concevoi
 Au final, l'abstraction nous fournit une solution plus simple et aussi sûre que le variant pour nous permettre de représenter un sous-ensemble parmis les entiers.
 
 Dans le prochain article nous initialiserons notre projet.
+Le mal du passage
+
+Porte banner © Charlie Creber
 
 Jusqu'ici nous avons vu l'intérêt des modules pour structurer le code et sa conception.
 Module d'ordre supérieur
