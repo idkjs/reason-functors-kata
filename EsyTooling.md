@@ -24,11 +24,11 @@ Initialisation
 
 Dans notre répertoire projet, nous commençons par créer les fichiers nécessaire :
 ```bash
-> touch sorte; cd sorte
-> echo '(lang dune 2.8)\n (name sorte)' >> dune-project
-> echo '(dirs (:standard \ node_modules \ _esy))' >> dune
-> touch package.json
-> touch sorte.opam
+touch sorte; cd sorte
+echo '(lang dune 2.8)\n (name sorte)' >> dune-project
+echo '(dirs (:standard \ node_modules \ _esy))' >> dune
+touch package.json
+touch sorte.opam
 ```
     Le fichier dune-project se place à la racine du projet et sert à définir les informations communes, à minima la version de Dune utilisée.
 
