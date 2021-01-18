@@ -24,7 +24,7 @@ Initialisation
 
 Dans notre répertoire projet, nous commençons par créer les fichiers nécessaire :
 ```bash
-touch sorte; cd sorte
+mkdir sorte; cd sorte
 echo '(lang dune 2.8)\n (name sorte)' >> dune-project
 echo '(dirs (:standard \ node_modules \ _esy))' >> dune
 touch package.json
