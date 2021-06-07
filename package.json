@@ -1,17 +1,16 @@
 {
   "name": "reason-functors-kata",
   "version": "0.1.0",
- "scripts": {
+  "scripts": {
     "clean": "bsb -clean-world",
-    "watch": "bsb -w",
+    "watch": "BS_WATCH_CLEAR=true bsb -make-world -w",
+    "format": "find . -iname '*.re' | grep -v node_modules | xargs bsrefmt --in-place && find . -iname '*.rei' | xargs bsrefmt -i true --in-place",
     "test": "node src/FunctorsSimple.js"
   },
   "devDependencies": {
-    "bs-platform": "^8.4.2"
+    "bs-platform": "^9.0.2"
   },
-  "keywords": [
-    "BuckleScript"
-  ],
+  "keywords": [ "BuckleScript" ],
   "author": "",
   "license": "MIT"
 }

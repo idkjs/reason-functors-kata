@@ -101,9 +101,15 @@ module Race = (B: BONUS with type t = Abilities.t) : PLAYABLE => {
 //     ),
 //   );
 
-
 let no_bonus =
-  Abilities.{strength: 0, dexterity: 0, constitution: 0, intelligence: 0, wisdom: 0, charisma: 0};
+  Abilities.{
+    strength: 0,
+    dexterity: 0,
+    constitution: 0,
+    intelligence: 0,
+    wisdom: 0,
+    charisma: 0,
+  };
 
 // using the no bonus function to spread in some default values
 module Dwarf = Race((val bonus(Abilities.{...no_bonus, constitution: 2})));
@@ -148,11 +154,17 @@ type buddy =
   | HalfOrc(HalfOrc.t)
   | Human(Human.t);
 
-let companions = [Human(catti), Halfing(regis), Dwarf(bruenor), Human(wulfgar), Elf(drizzt)];
+let companions = [
+  Human(catti),
+  Halfing(regis),
+  Dwarf(bruenor),
+  Human(wulfgar),
+  Elf(drizzt),
+];
 let companions_final = [
   `Human(catti),
   `Halfing(regis),
   `Dwarf(bruenor),
   `Human(wulfgar),
-  `Elf(drizzt)
+  `Elf(drizzt),
 ];

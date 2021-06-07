@@ -43,7 +43,7 @@ module type BONUS = {
   type t;
   let value: t;
 };
-let bonus = (x: int) : (module BONUS with type t = int) =>
+let bonus = (x: int): (module BONUS with type t = int) =>
   (module
    {
      type t = int;
@@ -79,19 +79,13 @@ module Race = (B: BONUS with type t = int) : PLAYABLE => {
     character.abilities.constitution + constitution_bonus;
 };
 
-module Dwarf =
-  Race(val bonus(2));
-module Elf =
-  Race(val bonus(0));
-module Tiefling =
-  Race(val default_bonus);
+module Dwarf = Race((val bonus(2)));
+module Elf = Race((val bonus(0)));
+module Tiefling = Race((val default_bonus));
 //   without our bonus function
 module Halfling =
   Race({
     type t = int;
     let value = 0;
   });
-module HalfOrc =
-  Race(val bonus(1));
-
-
+module HalfOrc = Race((val bonus(1)));
